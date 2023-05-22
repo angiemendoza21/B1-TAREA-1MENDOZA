@@ -1,0 +1,614 @@
+const read = require("prompt-sync")();
+	// Ejercicio  1 : Ingrese un número entero y reportar si es par o impar . 
+class Ejercicios {
+  ejercicio1() {
+    let num = 0;
+    num = read("Ingrese un número: ");
+    if (num % 2 === 0) {
+      console.log(`El número ${num} es par.`);
+    } else {
+      console.log(`El número ${num} es impar.`);
+    }
+  }
+
+//Ejercicio 2: Determinar si un alumno aprueba o reprueba un curso, sabiendo que aprobará si su promedio de tres
+	//calificaciones es mayor o igual a 70; reprueba caso contrario. 
+  ejercicio2() {
+    let nota1,
+      nota2,
+      nota3,
+      nota_f = 0;
+    nota1 = read("Ingrese primera nota: ");
+    nota2 = read("Ingrese segunda nota: ");
+    nota3 = read("Ingrese tercera nota: ");
+
+    nota_f = (Number(nota1) + Number(nota2) + Number(nota3)) / 3;
+    if (nota_f >= 70) {
+      console.log(`USTED APROBÓ. Su nota final es ${nota_f}.`);
+    } else {
+      console.log(`USTED REPROBÓ. Su nota final es ${nota_f}.`);
+    }
+  }
+//EJERCICIO3: En un almacén se hace un 20% de descuento a los clientes cuya compra supere los $100. 
+	//¿Cuál será la cantidad que pagará una persona por su compra? 
+  ejercicio3() {
+    let num = 0;
+
+    num = read("Ingrese el total: ");
+    num = Number(num);
+
+    let final = num;
+
+    if (num >= 100) {
+      final = num * 0.8;
+      console.log(`El total a pagar es: ${final.toFixed(2)}`);
+    } else {
+      console.log(`El total a pagar es: ${final.toFixed(2)}`);
+    }
+  }
+//Ejercicio 4: Leer 2 números; si son iguales que los multiplique, si el 
+	//primero es mayor que el segundo que los reste y si no que los sume. 
+  ejercicio4() {
+    let num1,
+      num2 = 0;
+
+    num1 = read("Ingrese primer número: ");
+    num2 = read("Ingrese segundo número: ");
+    num1 = Number(num1);
+    num2 = Number(num2);
+
+    if (num1 == num2) {
+      let multi = num1 * num2;
+      console.log(`La multiplicación es: ${multi}`);
+    } else if (num1 > num2) {
+      let rest = num1 - num2;
+      console.log(`La resta es: ${rest}`);
+    }
+
+    if (num1 < num2) {
+      let sum = num1 + num2;
+      console.log(`La suma es: ${sum}`);
+    }
+  }
+	//EJERCICIO5: Leer tres números diferentes e imprimir el número mayor de los tres. 
+  ejercicio5() {
+    let num1, num2, num3;
+
+    num1 = read("Ingrese primer número: ");
+    num2 = read("Ingrese segundo número: ");
+    num3 = read("Ingrese tercer número: ");
+    num1 = Number(num1);
+    num2 = Number(num2);
+    num3 = Number(num3);
+
+    if (num1 > num2 && num1) {
+      console.log(`El numero mayor es: ${num1}`);
+    } else if (num2 > num1 && num2 > num3) {
+      console.log(`El numero mayor es: ${num2}`);
+    } else if (num3 > num1 && num3 > num2) {
+      console.log(`El mayor es: ${num3}`);
+    } else if (num1 == num2 && num1 == num3) {
+      console.log(`TODOS SON IGUALES`);
+    }
+  }
+//Ejercicio 6: Una frutería ofrece las manzanas con descuento según la siguiente tabla: 
+	//Número de kilos comprados | % Descuento
+	//0 - 2                     | 0%
+	//2.01 - 5                  | 10%
+	//5.01 - 10                 | 15%
+	//10.01 en adelante         | 20%
+  ejercicio6() {
+    let kilo;
+    kilo = read("Cuantos kilos de manzana desea comprar?:  ");
+    kilo = Number(kilo);
+    let pkilo = 2.24;
+    let pSinDescuento = pkilo * kilo;
+    let pDescuento = 0;
+
+    if (kilo >= 0 && kilo <= 2) {
+      pDescuento = pSinDescuento;
+      console.log(`El total a pagar es: ${pDescuento.toFixed(2)}`);
+    } else if (kilo <= 5) {
+      pDescuento = pSinDescuento * 0.9;
+      console.log(`El total a pagar es: ${pDescuento.toFixed(2)}`);
+    } else if (kilo <= 10) {
+      pDescuento = pSinDescuento * 0.85;
+      console.log(`El total a pagar es: ${pDescuento.toFixed(2)}`);
+    } else {
+      pDescuento = pSinDescuento * 0.8;
+      console.log(`El total a pagar es: ${pDescuento.toFixed(2)}`);
+    }
+  }
+//EJERCICIO7: Elaborar un programa que me muestre los días de las semanas cuando ingrese los siete primeros números.
+  ejercicio7() {
+    console.log(
+      "Ingrese un número del 1 al 7 para mostrar un día de la semana"
+    );
+    console.log("(los días se enlistan y se ordenan del 1 al 7)");
+
+    let num = Number(read(">>"));
+
+    switch (num) {
+      case 1:
+        console.log("LUNES");
+        break;
+      case 2:
+        console.log("MARTES");
+        break;
+      case 3:
+        console.log("MIÉRCOLES");
+        break;
+      case 4:
+        console.log("JUEVES");
+        break;
+      case 5:
+        console.log("VIERNES");
+        break;
+      case 6:
+        console.log("SÁBADO");
+        break;
+      case 7:
+        console.log("DOMINGO");
+        break;
+      default:
+        console.log("ERROR. ESCRIBA NUEVAMENTE POR FAVOR.");
+    }
+  }
+// Ejercicio 8: Elaborar un programa que me muestre el significado
+	// de aniversario de cada década hasta los 60. (Diagrama de flujo)
+  ejercicio8() {
+    console.log("Digite la década entre 10 y 60");
+    let decada = Number(read(">>"));
+
+    switch (decada) {
+      case 10:
+        console.log("Boda de Hojalata");
+        break;
+      case 20:
+        console.log("Boda de Porcelana");
+        break;
+      case 30:
+        console.log("Bodas de Perlas");
+        break;
+      case 40:
+        console.log("Bodas de Rubí");
+        break;
+      case 50:
+        console.log("Bodas de Oro");
+        break;
+      case 60:
+        console.log("Bodas de Diamante");
+        break;
+      default:
+        console.log("NO EXISTE ANIVERSARIO EN ESE AÑO");
+        break;
+    }
+  }
+//Ejercicio 9: Hacer un programa que tenga un menú con las siguientes opciones: 
+	//Opción 1: Elevar un número a una potencia X
+	//Opción 2: Sacar la raíz cuadrada de un número
+	//Opción 3: Salir
+  ejercicio9() {
+    console.log("Opción 1: Elevar un número a una potencia X");
+    console.log("Opción 2: Sacar la raíz cuadrada de un número");
+    console.log("Opción 3: Salir");
+
+    let opcion = Number(read(">>"));
+
+    switch (opcion) {
+      case 1:
+        console.log("Ingrese un número:");
+        let numero = Number(read());
+        console.log("Ingrese una potencia:");
+        let potencia = Number(read());
+        let resultado = Math.pow(numero, potencia);
+        console.log("El resultado es: ", resultado);
+        break;
+      case 2:
+        console.log("Ingrese un número:");
+        let numero2 = Number(read());
+        let raizCuadrada = Math.sqrt(numero2);
+        console.log("La raíz cuadrada es: ", raizCuadrada.toFixed(4));
+        break;
+      case 3:
+        console.log("Salió...");
+        break;
+      default:
+        console.log("Opción inválida");
+        break;
+    }
+  }
+  //EJERCICIO10; //Un profesor prepara tres cuestionarios para una evaluación final: A, B y C. Se sabe que se tarda 5 
+	//minutos en revisar el cuestionario A, 8 en revisar el cuestionario B y 6 en el C. La cantidad de exámenes de cada
+	//tipo se entran por teclado. ¿Cuántas horas y cuántos minutos se tardará en revisar todas las evaluaciones?
+
+  //EJERCICIO11; Hacer un ejercicio para resolver la formula general de la ecuacion
+  ejercicio11() {
+    console.log("Ingrese el valor de A:");
+    let a = Number(read(">>"));
+
+    console.log("Ingrese el valor de B:");
+    let b = Number(read(">>"));
+
+    console.log("Ingrese el valor de C:");
+    let c = Number(read(">>"));
+
+    let discriminante = b ** 2 - 4 * a * c;
+
+    if (discriminante >= 0) {
+      let raizDiscriminante = Math.sqrt(discriminante);
+      let resultado1 = (-b + raizDiscriminante) / (2 * a);
+      let resultado2 = (-b - raizDiscriminante) / (2 * a);
+      console.log("El resultado 1 es:", resultado1);
+      console.log("El resultado 2 es:", resultado2);
+    } else {
+      console.log("La ecuación no tiene soluciones reales.");
+    }
+  }
+
+  //EJERCICIO 12; DETERMINAR LA SOLUCION LOGICA DE LA SIGUIENTE OPERACIÓN
+  ejercicio12() {
+    console.log("Ingrese el valor de a:");
+    let a = Number(read(">>"));
+
+    console.log("Ingrese el valor de b:");
+    let b = Number(read(">>"));
+
+    let m = (3 + 5 * 8 < 3 && (-6 / 3) * 4 + 2 < 2) || a > b;
+
+    console.log(m);
+  }
+//EJERCICIO13: hacer un programa que cambie de variables
+  ejercicio13() {
+    console.log("INVERTIR VALORES");
+    console.log("Digite a:");
+    let num = Number(read(">>"));
+
+    console.log("Digite b:");
+    let num2 = Number(read(">>"));
+
+    let z = num;
+    num = num2;
+    num2 = z;
+
+    console.log("El valor de a es", num);
+    console.log("El valor de b es", num2);
+  }
+//EJERCICIO14: Calcular la suma de los "N" primeros números. (Pseudocódigo)
+  ejercicio14() {
+    let N, sum;
+
+    sum = 0;
+
+    N = Number(read("INGRESE EL TOTAL DE NUMEROS QUE SE SUMARAN: "));
+
+    for (let i = 1; i <= N; i++) {
+      const num = Number(read(`Ingrese el numero #${i} para sumar: `));
+      sum += num;
+    }
+
+    console.log(`La suma de los ${N} numeros es: ${sum}`);
+  }
+//EJERCICIO15: Se desea calcular independientemente la suma de los números pares e impares comprendidos entre 1 y 50.
+  ejercicio15() {
+    let suma_par = 0;
+    let suma_impar = 0;
+
+    for (let i = 1; i <= 50; i++) {
+      if (i % 2 === 0) {
+        suma_par += i;
+      } else {
+        suma_impar += i;
+      }
+    }
+
+    console.log(`La suma de los numeros pares es: ${suma_par}`);
+    console.log(`La suma de los numeros impares es: ${suma_impar}`);
+  }
+//EJERCICIO16:Leer 10 números e imprimir cuantos son positivos, cuantos negativos y cuantos neutros. (Diagrama N-S)
+  ejercicio16() {
+    let conteo_p = 0;
+    let conteo_n = 0;
+    let conteo_neo = 0;
+
+    console.log("ENCONTRAR NUMEROS POSITIVOS, NEGATIVOS Y NEUTROS.");
+    console.log("Ingrese 10 números:");
+
+    for (let i = 1; i <= 10; i++) {
+      let num = Number(read(` Numero ${i}: `));
+
+      if (num > 0) {
+        conteo_p++;
+      } else if (num < 0) {
+        conteo_n++;
+      } else {
+        conteo_neo++;
+      }
+    }
+
+    console.log(`El total de numeros positivos es: ${conteo_p}`);
+    console.log(`El total de numeros negativos es: ${conteo_n}`);
+    console.log(`El total de numeros neutros es: ${conteo_neo}`);
+  }
+//EJERCICIO17: //Suponga que se tiene un conjunto de calificaciones de un grupo de 10 alumnos. 
+	//Realizar un algoritmo para calcular la calificación promedio 
+	//y la calificación más baja de todo el grupo. (Pseudocódigo)
+  ejercicio17() {
+    let cali,
+      sum = 0,
+      promedio = 0;
+    let bajo_promedio = Infinity;
+
+    for (let i = 1; i <= 10; i++) {
+      console.log(`Ingrese la calificación #${i}:`);
+      cali = Number(read(">>"));
+
+      sum += cali;
+      promedio = sum / 10;
+
+      if (cali <= bajo_promedio) {
+        bajo_promedio = cali;
+      }
+    }
+
+    console.log(`La suma de las calificaciones es: ${sum}`);
+    console.log(`El promedio es: ${promedio}`);
+    console.log(`La calificación más baja es: ${bajo_promedio}`);
+  }
+//EJERCICIO18: Calcular el factorial de un número mayor o igual a 0
+  ejercicio18() {
+    function factorial(num) {
+      if (num === 0) {
+        return 1;
+      } else {
+        return num * factorial(num - 1);
+      }
+    }
+
+    console.clear();
+    let num;
+
+    do {
+      num = Number(read("Digite un número no menor a cero: "));
+    } while (num < 0);
+
+    const fact = factorial(num);
+
+    console.log(`El factorial es: ${fact}`);
+  }
+//EJERCICIO19:
+//Calcular la siguiente sumatoria de los "N" elementos: 
+	//S = 1 + 4 + 9 + ?  
+	//N elementos
+  ejercicio19() {
+    let n, i, suma, potencia;
+    i = 1;
+    suma = 0;
+
+    n = Number(read("Digite un número: "));
+
+    while (i <= n) {
+      potencia = Math.pow(i, 2);
+      suma += potencia;
+      i++;
+    }
+
+    console.log("La suma es: " + suma);
+  }
+//EJERCICIO20: Ingresar "N" enteros, visualizar la suma de los números pares de la lista, cuántos números pares existen y 
+	//cuál es el promedio de los números impares. (Pseudocódigo)
+  ejercicio20() {
+    let numTrabajadores, i, tarifaPago, horas, salario, sumaTotal;
+    sumaTotal = 0;
+
+    numTrabajadores = Number(
+      read("Ingrese la cantiNumberdad de trabajadores: ")
+    );
+    tarifaPago = Number(read("Ingrese la tarifa de pago por hora: "));
+
+    for (i = 1; i <= numTrabajadores; i++) {
+      horas = Number(
+        read(`Ingrese las horas trabajadar del trabajador ${i}: `)
+      );
+      salario = horas * tarifaPago;
+      console.log(`El salario del trabajador ${i} es: $${salario} `);
+      sumaTotal += salario;
+    }
+
+    console.log(`El salario total de los trabajadores es: $${sumaTotal}`);
+  }
+//EJERCICIO21: 
+//Ejercicio 21(Ciclo Mientias - Hacer);
+	//Dada las horas trabajadas de 5 personas y le 
+	//tarifa de pago calcular el salario,y lo sumatoria de todos los salarios.
+  ejercicio21() {
+    let i = 1;
+    let salarioCada,
+      horas,
+      tarifa,
+      sumatoriaSalario = 0;
+    let numeroTrabajadores;
+
+    numeroTrabajadores = Number(read("Digite el número de trabajadores: "));
+    tarifa = Number(read("Digite la tarifa: "));
+
+    while (i <= numeroTrabajadores) {
+      horas = Number(
+        read(
+          `Trabajador ${i}: Digite el valor de horas trabajadas por este trabajador: `
+        )
+      );
+      salarioCada = horas * tarifa;
+      console.log(`El valor a pagar de este trabajador es $${salarioCada}`);
+      sumatoriaSalario += salarioCada;
+      i++;
+    }
+
+    console.log(
+      `El valor total de salarios a pagar es de: $${sumatoriaSalario}`
+    );
+  }
+//EJERCICIO22: //CALCULAR LA CANTIDAD DE SEGUNDOS QUE ESTA INCLUIDO EN EL NUMERO HORAS, MINUTOS, SEGUNDOS INGRESADO POR EL USUARIO
+  ejercicio22() {
+    let Horas, Minutos, Segundos;
+    let suma1, suma2, sumaFinal;
+
+    console.log("INGRESE LA HORA");
+    Horas = Number(read("Hora: "));
+
+    console.log("INGRESE LOS MINUTOS");
+    Minutos = Number(read("Minutos: "));
+
+    console.log("INGRESE LOS SEGUNDOS");
+    Segundos = Number(read("Segundos: "));
+
+    suma1 = Horas * 60 * 60;
+    suma2 = Minutos * 60;
+    sumaFinal = suma1 + suma2 + Segundos;
+
+    console.log(
+      `El total de segundos incluidos en horas, minutos y segundos es: ${sumaFinal}`
+    );
+  }
+//EJERCICIO23:CREAR FORMULA PARA SACAR  EL AREA Y LONGITUD DEL CIRCULO
+  ejercicio23() {
+    const pi = Math.PI;
+
+    let radio, area, longitud;
+
+    console.log("Ingrese el valor del radio");
+    radio = Number(read("Radio: "));
+
+    area = pi * Math.pow(radio, 2);
+    longitud = 2 * pi * radio;
+
+    console.log(`El area es: ${area}`);
+    console.log(`La longitud: ${longitud}`);
+  }
+//EJERCICIO: //Un maestro desea saber que porcentaje de hombres y que porcentaje de mujeres hay en un grupo de estudiantes.
+  ejercicio24() {
+    let man, woman, total, percentage1, percentage2;
+
+    console.log("INGRESE LA CANTIDAD DE HOMBRES TOTAL DEL CURSO");
+    man = Number(read("Cantidad de hombres: "));
+
+    console.log("INGRESE LA CANTIDAD DE MUJERES TOTAL DEL CURSO");
+    woman = Number(read("Cantidad de mujeres: "));
+
+    total = man + woman;
+
+    percentage1 = (man / total) * 100;
+    percentage2 = (woman / total) * 100;
+
+    console.log(`HAY UN TOTAL DE ${total} ESTUDIANTES EN EL CURSO`);
+
+    console.log(`EL PORCENTAJE DE HOMBRES ES: ${Math.trunc(percentage1)}%`);
+    console.log(`EL PORCENTAJE DE MUJERES ES: ${Math.trunc(percentage2)}%`);
+  }
+//EJERCICIO25: //Un profesor prepara tres cuestionarios para una evaluación final: A, B y C. Se sabe que se tarda 5 
+	//minutos en revisar el cuestionario A, 8 en revisar el cuestionario B y 6 en el C. La cantidad de exámenes de cada
+	//tipo se entran por teclado. ¿Cuántas horas y cuántos minutos se tardará en revisar todas las evaluaciones?
+  ejercicio25() {
+    let A, B, C;
+    let first, second, third;
+    let minutos, hora, total;
+
+    console.log("Ingrese la cantidad de exámenes del tipo A:");
+    A = Number(read("Cantidad de exámenes tipo A: "));
+
+    console.log("Ingrese la cantidad de exámenes del tipo B:");
+    B = Number(read("Cantidad de exámenes tipo B: "));
+
+    console.log("Ingrese la cantidad de exámenes del tipo C:");
+    C = Number(read("Cantidad de exámenes tipo C: "));
+
+    first = A * 5;
+    second = B * 8;
+    third = C * 6;
+
+    total = first + second + third;
+
+    hora = Math.trunc(total / 60);
+    minutos = total % 60;
+
+    console.log(`El tiempo total es: ${hora} hora(s) y ${minutos} minuto(s).`);
+  }
+
+//Ejercicio 26: Un alumno desea saber cuál será su calificación final en la materia de Algoritmos. 
+	//Dicha calificación se compone de los siguientes porcentajes: 
+	//55% del promedio de sus tres calificaciones parciales.
+	//30% de la calificación del examen final.
+	//15% de la calificación de un trabajo final.
+  ejercicio26() {
+    let final1, final2, final3;
+    let examf, trabajf;
+    let final_promedio, final_total;
+    let examen_final, trabajo_final;
+    let total;
+
+    console.log("Ingrese la nota del primer trabajo parcial:");
+    final1 = Number(read("Nota del primer trabajo parcial: "));
+
+    console.log("Ingrese la nota del segundo trabajo parcial:");
+    final2 = Number(read("Nota del segundo trabajo parcial: "));
+
+    console.log("Ingrese la nota del tercer trabajo parcial:");
+    final3 = Number(read("Nota del tercer trabajo parcial: "));
+
+    final_promedio = (final1 + final2 + final3) / 3;
+    final_total = final_promedio * 0.55;
+
+    console.log("Ingrese la calificación de su examen parcial:");
+    examf = Number(read("Calificación del examen parcial: "));
+
+    examen_final = examf * 0.3;
+
+    console.log("Ingrese la calificación de un trabajo final:");
+    trabajf = Number(read("Calificación del trabajo final: "));
+
+    trabajo_final = trabajf * 0.15;
+
+    total = final_total + examen_final + trabajo_final;
+
+    console.log(
+      `La nota final de los tres trabajos parciales: ${final_total.toFixed(2)}`
+    );
+
+    console.log(
+      `La nota final del examen parcial es: ${examen_final.toFixed(2)}`
+    );
+    console.log(
+      `La nota final del trabajo final es: ${trabajo_final.toFixed(2)}`
+    );
+    console.log(`La nota final en la materia es: ${total.toFixed(2)}`);
+  }
+}
+
+const ejercicios = new Ejercicios();
+
+//ejercicios.ejercicio1();n
+//ejercicios.ejercicio2();
+// ejercicios.ejercicio3();
+// ejercicios.ejercicio4();
+// ejercicios.ejercicio5();
+// ejercicios.ejercicio6();
+// ejercicios.ejercicio7();
+// ejercicios.ejercicio8();
+// ejercicios.ejercicio9();
+// ejercicios.ejercicio10();
+// ejercicios.ejercicio11();
+// ejercicios.ejercicio12();
+// ejercicios.ejercicio13();
+// ejercicios.ejercicio14();
+// ejercicios.ejercicio15();
+// ejercicios.ejercicio16();
+// ejercicios.ejercicio17();
+// ejercicios.ejercicio18();
+// ejercicios.ejercicio19();
+// ejercicios.ejercicio20();
+// ejercicios.ejercicio21();
+// ejercicios.ejercicio22();
+// ejercicios.ejercicio23();
+// ejercicios.ejercicio24();
+// ejercicios.ejercicio25();
+// ejercicios.ejercicio26();
