@@ -1,0 +1,540 @@
+Funcion ejercicio1
+	// Ejercicio  1 : Ingrese un número entero y reportar si es par o impar . 
+	Definir  num Como Entero ;
+	
+	Escribir  "Ingrese un numero";
+	Leer num;
+	
+	Si num MOD 2=0 /// EL RESIDUO
+		Entonces  Escribir "es par";
+	sino
+		Escribir  "Es impar";
+		
+	finsi
+FinFuncion
+Funcion ejercicio2
+	//Ejercicio 2: Determinar si un alumno aprueba o reprueba un curso, sabiendo que aprobará si su promedio de tres
+	//calificaciones es mayor o igual a 70; reprueba caso contrario. 
+	Definir nota1, nota2, nota3, nota_f Como Entero;
+	
+	Escribir "ingrese primera nota";
+	leer nota1;
+	
+	Escribir "ingrese segunda nota";
+	leer nota2;
+	
+	Escribir "ingrese tercera nota";
+	leer nota3;
+	nota_f <-  (nota1 + nota2 + nota3) /3;
+	si nota_f >= 70
+		Entonces escribir "Aprobó";
+		Escribir "SU NOTA FINAL ES: ", nota_f;
+	SiNo
+		Escribir "NO Aprobó";
+		Escribir "SU NOTA FINAL ES: ", nota_f;
+		
+	FinSi
+FinFuncion
+Funcion ejercicio3
+	//En un almacén se hace un 20% de descuento a los clientes cuya compra supere los $100. 
+	//¿Cuál será la cantidad que pagará una persona por su compra? 
+	Definir num como entero;
+	Definir descuento Como Real;
+	Definir final Como Real;
+	Escribir "ingrese el total";
+	leer num;
+	si num > 100 entonces 
+		descuento <- num * 0.20;
+		final<- num - descuento;	
+		Escribir "El total es ", final; 	
+	SiNo
+		Escribir "El total es " ,num;	
+		
+FinSi
+FinFuncion
+Funcion ejercicio4
+	//Ejercicio 4: Leer 2 números; si son iguales que los multiplique, si el 
+	//primero es mayor que el segundo que los reste y si no que los sume. 
+	Definir num1, num2 como entero;
+	Definir multi,rest, sum  Como Entero;	
+	Escribir "ingrese el primer digito";
+	leer num1;
+	Escribir "ingrese el segundo digito";
+	leer num2;
+	si  num1== num2
+		Entonces multi <- num1 * num2;
+		Escribir multi;
+	SiNo
+		si num1 > num2
+			Entonces rest <- num1 - num2;
+			Escribir rest;		
+		FinSi
+		si num1 < num2
+			Entonces sum <- num1 + num2;
+			Escribir sum;	
+		FinSi
+	FinSi
+FinFuncion
+Funcion ejercicio5 
+	//Leer tres números diferentes e imprimir el número mayor de los tres. 
+	Definir num, num2, num3 Como Entero;
+	Escribir "ingrese primer numero";
+	Leer num;
+	Escribir "ingrese segundo numero";
+	Leer num2;	
+	Escribir "ingrese tercer numero";
+	Leer num3;	
+	si num> num2 y num> num3
+		Entonces escribir "el mayor es ", num;	
+	SiNo
+		si num2> num y num2> num3
+			Entonces escribir "el mayor es ", num2;	
+		FinSi
+		si num3> num y num3> num2
+			Entonces escribir "el mayor es ", num3;	
+		FinSi
+	FinSi
+FinFuncion
+Funcion ejercicio6
+	//Ejercicio 6: Una frutería ofrece las manzanas con descuento según la siguiente tabla: 
+	//Número de kilos comprados | % Descuento
+	//0 - 2                     | 0%
+	//2.01 - 5                  | 10%
+	//5.01 - 10                 | 15%
+	//10.01 en adelante         | 20%
+	Definir num, kilo Como real;
+	Definir descuento0, descuento1, descuento2, descuento3 Como Real;
+	Escribir "cuanta manzanas compro";
+	leer num;
+	kilo <- num * 0.60;
+	Si kilo <= 2
+		Entonces
+		Escribir " SU TOTAL ES $ ", num;
+	sino 
+		si kilo <- 2.01 o kilo <= 5  
+			Entonces
+			descuento1 <- kilo * 0.1;	
+			Escribir "SU TOTAL ES $$ ", descuento1;
+		FinSi
+		si kilo >= 5.01 o kilo <- 10  
+			Entonces
+			descuento2 <- kilo * 00.15;	
+			Escribir "SU TOTAL ES $$$ ", descuento2;
+		FinSi
+	FinSi
+	Escribir kilo;
+FinFuncion
+Funcion ejercicio7
+	//Elaborar un programa que me muestre los días de las semanas cuando ingrese los siete primeros números. 
+	Definir num Como entero;
+	Escribir "ingrese un numero del 1 al 7 para mostrar un dia de la semana" ;
+	Escribir "(los dias se enlista y se ordena del 1 al 7)";
+	Leer num;
+	Segun num hacer
+		1: Escribir "LUNES";
+		2: Escribir "MARTES";	
+		3: Escribir "MIERCOLES";		
+		4: Escribir "JUEVEZ";		
+		5: Escribir "VIERNES";		
+		6: Escribir "SABADO";		
+		7: Escribir "DOMINGO";		
+			DE OTRO MODO
+			Escribir "ERROR ESCRIBA NUEVAMENTE POR FAVOR";	
+	FinSegun
+FinFuncion
+Funcion ejercicio8
+	// Ejercicio 8: Elaborar un programa que me muestre el significado
+	// de aniversario de cada década hasta los 60. (Diagrama de flujo)
+	Definir decada Como Entero;
+	Escribir "Digite la decada del entre 10 y 60";
+	Leer decada;
+	Segun decada  Hacer
+		10:Escribir "Boda de Hojalata";
+		20:Escribir "Boda de Porcelana";
+		30:Escribir "Bodas de Perlas";
+		40:Escribir "Bodas de Rubí";
+		50:Escribir "Bodas de Oro";
+		60:Escribir 'Bodas de Diamante';
+		De Otro Modo:
+			Escribir 'NO EXISTE ANIVERSARIO EN ESE AÑO';
+	FinSegun
+FinFuncion
+
+Funcion ejercicio9
+	//Ejercicio 9: Hacer un programa que tenga un menú con las siguientes opciones: 
+	//Opción 1: Elevar un número a una potencia X
+	//Opción 2: Sacar la raíz cuadrada de un número
+	//Opción 3: Salir
+	Definir num Como Entero;
+	Definir num2 como entero;
+	Definir potencia, resultado Como Entero;
+	Definir raiz_cua Como real;
+	Escribir "Opción 1: Elevar un número a una potencia X";
+	Escribir "Opción 2: Sacar la raíz cuadrada de un número";
+	Escribir "Opción 3: Salir";
+	Leer num;
+	Segun num hacer
+		1: Escribir "ingrese numero";
+			leer num2;
+			Escribir "ingrese una potencia";
+			leer potencia;
+			resultado <- num2^potencia;
+			Escribir resultado;
+		2: Escribir "ingrese un numero";
+			leer num2;
+			raiz_cua <- raiz(num2);
+			Escribir "La raiz cuadrada es ", raiz_cua;
+		3: Escribir "Salio";   
+	FinSegun
+FinFuncion
+
+Funcion ejercicio10
+	 //Sumamos dos variables 
+		Definir a,b, resultado como enteros;
+		Escribir "Digite un numero: ";
+		Leer a;
+		
+		Escribir "Digite el segundo numero: ";
+		Leer b;
+		resultado <- a+b; 
+		Escribir "El resultado es: ",resultado;
+FinFuncion
+
+Funcion ejercicio11
+	//Hacer un ejercicio para resolver la formula general de la ecuacion
+	Definir a Como real;
+	Definir b Como real;
+	Definir c Como real;
+	Definir resultado Como Real;
+	Escribir "ingrese el valor de A";
+	leer a;
+	Escribir "ingrese el valor de B";
+	leer b;
+	Escribir "ingrese el valor de C";
+	leer c;	
+	resultado <- (-b+ rc(b^2-4*a*c))/(2* a);
+	Escribir resultado;
+FinFuncion
+
+Funcion ejercicio12
+	//DETERMINAR LA SOLUCION LOGICA DE LA SIGUIENTE OPERACIÓN
+	Definir a Como real;
+	Definir b Como real;	
+	Definir mister Como Logico;
+	Escribir "ingrese a";
+	leer a;
+	Escribir "ingrese b";
+	leer b;
+	mister <- ((3+5*8) < 3 y ((-6/3*4)+2<2)) o (a>b)  ;
+	Escribir mister;
+FinFuncion 
+
+Funcion ejercicio13
+	//hacer un programa que cambie de variables
+	Definir num, num2 Como entero;	
+	Definir z Como entero; //ES LA NUEVA VARIABLE QUE GUARDARA LA INFORMACION
+	Escribir "Digite a";
+	leer num;
+	Escribir "Digite b";
+	leer num2
+	z<- num; //LA NUEVA PASARA LA INFORMACION DEL PRIMER DIGITO
+	num <- num2;//
+	num2 <- z;
+	Escribir "El valor de a es ", num;
+	Escribir "El valor de b es ", num2;
+FinFuncion
+
+Funcion ejercicio14
+	//Calcular la suma de los "N" primeros números. (Pseudocódigo)
+	Definir N Como Entero;
+	Definir suma, num Como Entero;
+	Definir i Como Entero;
+	suma <-0;
+	num<-0;
+	Escribir "INGRESE EL TOTAL DE NUMEROS QUE SE SUMARAN";
+	leer N;
+	Para i <-1 Hasta N con paso 1 Hacer		
+		Escribir "ingrese numeros";
+		leer num;
+		suma<- suma + num;
+	FinPara
+	Escribir "EL TOTAL DE LA SUMA DE N ES ", suma;
+FinFuncion
+
+Funcion ejercicio15
+	//Se desea calcular independientemente la suma de los números pares e impares comprendidos entre 1 y 50.
+	Definir par, impar,suma_par, suma_impar como entero;
+	Definir i Como Entero;
+	suma_par <- 0;
+	suma_impar <- 0;
+	i <- 0;
+	par <- i;
+	impar <- i;
+	Para i <- 2 Hasta 49 Con Paso 1 Hacer
+		Escribir "la suma de los para es  ", suma_par;		
+		si i MOD 2 ==0 Entonces
+			par <-i;
+			suma_par <-  i + suma_par;	
+		SiNo
+			impar <-i;
+			suma_impar <- i + suma_impar;
+			Escribir "La suma de los impares es ", suma_impar;
+		FinSi
+	FinPara
+	
+FinFuncion
+
+Funcion ejercicio16
+	//Leer 10 números e imprimir cuantos son positivos, cuantos negativos y cuantos neutros. (Diagrama N-S)
+	Definir num, i Como Entero;	
+	Definir conteo_n, conteo_p, conteo_neo Como Entero;
+	conteo_p <- 0;
+	conteo_n <- 0;
+	conteo_neo <-0;
+	Escribir "ingrese numero";
+	Para i <- 1 Hasta 10 Con Paso 1 Hacer
+		leer num;
+		Escribir "Siga ingresando numeros";
+		si num > 0 Entonces
+			conteo_p <- conteo_p + 1;
+		FinSi
+		si num < 0 Entonces
+			conteo_n <- conteo_n + 1;
+		FinSi
+		si num = 0 Entonces
+			conteo_neo <- conteo_neo + 1;
+		FinSi
+	FinPara
+	Escribir "El total de numeros positivos son ",  conteo_p;	
+	Escribir "El total de numeros negativos son ", conteo_n;
+	Escribir "El total de numeros neutros son ", conteo_neo;
+	
+FinFuncion
+Funcion ejercicio17
+	//Suponga que se tiene un conjunto de calificaciones de un grupo de 10 alumnos. 
+	//Realizar un algoritmo para calcular la calificación promedio 
+	//y la calificación más baja de todo el grupo. (Pseudocódigo)
+	Definir cali, i, suma Como Entero;
+	Definir promedio Como real;
+	Definir bajo_promedio Como Real;
+	bajo_promedio <-9999999;
+	promedio <- 0;
+	suma <- 0;
+	Para i <- 1 Hasta 10 Con Paso 1 Hacer
+		Escribir "Ingrese calificacion";
+		leer cali;	
+		suma <- suma + cali;
+		promedio <- suma/10;
+		si cali <= bajo_promedio 
+			Entonces
+			bajo_promedio <- cali;	
+		FinSi
+	FinPara
+    Escribir suma;
+	Escribir "EL promedio es ", promedio;	
+	Escribir "La calificacion mas baja es ", bajo_promedio;
+FinFuncion
+Funcion ejercicio18
+	//Calcular el factorial de un número mayor o igual a 0
+	Definir i,num,fact Como real;
+	Repetir
+		Borrar Pantalla;
+		Escribir "Digite un numero no menor a cero";
+		leer num;
+	Hasta Que num>=0;
+	fact <- 1;
+	i <- 1;
+	Mientras i<num Hacer
+		i <- i+1;
+		fact <- fact*i;
+	FinMientras
+	Escribir 'El factor del numero es ',fact;
+FinFuncion
+Funcion ejercicio19
+	//Calcular la siguiente sumatoria de los "N" elementos: 
+	//S = 1 + 4 + 9 + ?  
+	//N elementos
+	Definir n,i,suma, potencia como enteros;
+	i <- 1;
+	suma <- 0;
+	Escribir "Digite un numero: ";
+	leer n;
+	Mientras i <= n Hacer
+		potencia <- i^2;
+		suma <- suma + potencia;
+		i <- i + 1;
+	FinMientras
+	Escribir "La suma es: ",suma;
+FinFuncion
+Funcion ejercicio20
+	//Ingresar "N" enteros, visualizar la suma de los números pares de la lista, cuántos números pares existen y 
+	//cuál es el promedio de los números impares. (Pseudocódigo)
+	Definir numtrabajadores, i, tarifapago, horas, salario, sumatotal como entero ;
+	Escribir " ingrese la cantidad de trabajadores" ;
+	Leer numtrabajadores;
+	i<-1;
+	sumatotal<-0;
+	Escribir " ingrese la tarifa" ;
+	Leer tarifapago;
+	mientras i<=numtrabajadores Hacer
+		Escribir " ingrese las horas trabajadas del " , i , " trabajador" ;
+		Leer horas;
+		salario<-horas*tarifapago;
+		Escribir " el salario del " , i , " trabajador es  "  , salario;
+		sumatotal<-sumatotal+salario;
+		i<-i+1;
+	FinMientras
+	Escribir " el salario total de los trabajadores es " , sumatotal;
+FinFuncion
+Funcion ejercicio21
+	//Ejercicio 21(Ciclo Mientias - Hacer);
+	//Dada las horas trabajadas de 5 personas y le 
+	//tarifa de pago calcular el salario,y lo sumatoria de todos los salarios.
+	Definir i como entero;
+	Definir Salario_cada,horas,tarifa,sumatoria_salario,numero_trabajadores como enteros;
+	i<-1;
+	sumatoria_salario<-0;
+	Escribir "digite el numero de trabajadores: ";
+	Leer numero_trabajadores;
+	Escribir "Digite la tarifa: ";
+	Leer tarifa;
+	Mientras i<= numero_trabajadores Hacer
+		Escribir i, " .Digite el valor de horas trabajadas por este trabajador: ";
+		leer horas;
+		Salario_cada<- horas*tarifa;
+		Escribir "El valor a pagar de este trabajador es: ", Salario_cada;
+		i<-i+1;
+		sumatoria_salario<-sumatoria_salario+Salario_cada;
+	FinMientras
+	Escribir "El valor total de salarios a pagar es de : ", Sumatoria_Salario;
+FinFuncion
+Funcion ejercicio22
+	//CALCULAR LA CANTIDAD DE SEGUNDOS QUE ESTA INCLUIDO EN EL NUMERO HORAS, MINUTOS, SEGUNDOS INGRESADO POR EL USUARIO
+	Definir Horas Como Entero;
+	Definir Minutos Como Entero;
+	Definir Segundoos Como Entero;
+	Definir suma1, suma2, suma_F Como real;
+	Escribir "INGRESE LA HORA";
+	Leer Horas;
+	Escribir "INGRESE LOS MINUTOS";
+	Leer Minutos;
+	Escribir "INGRESE LOS SEGUNDOS";
+	Leer Segundoos;
+	suma1 <- (Horas * 60) * 60; ///CALCULAR HORAS A SEGUNDOS
+	suma2 <- Minutos * 60; ///MINUTOS A SEGUNDOS
+	suma_F <- suma1 + suma2+ Segundoos;
+	Escribir "EL TOTAL DE SEGUNDOS INCLUIDOS EN HORAS, MINUTOS Y SEGUNDOS ES ", suma_F;	
+FinFuncion
+
+Funcion ejercicio23
+	//CREAR FORMULA PARA SACAR  EL AREA Y LONGITUD DEL CIRCULO
+	Definir radio Como Entero;
+	Definir area Como Real;
+	Definir Longituud como real;
+	Escribir  "Ingrese el valor del radio";
+	leer radio;
+	area <- pi * radio^2;
+	Longituud <- 2 * pi * radio;
+	Escribir "la area es ", area;
+	Escribir "la Longitud es ", Longituud;
+FinFuncion
+Funcion ejercicio24
+	//Un maestro desea saber que porcentaje de hombres y que porcentaje de mujeres hay en un grupo de estudiantes.
+	Definir man, woman Como Entero;
+	Definir total Como Entero;
+	Definir porcentaje1, porcentaje2 Como Real;
+	Escribir "INGRESE LA CANTIDAD DE HOMBRES TOTAL DEL CURSO";
+	leer man;
+	Escribir "INGRESE LA CANTIDAD DE MUJERES TOTAL DEL CURSO";
+	leer woman;
+	total <- man + woman;
+	porcentaje1 <- (man / total) * 100;
+	porcentaje2 <- (woman / total) * 100;
+	Escribir "HAY UN TOTAL DE ", total, " ESTUDIANTES EN EL CURSO";	
+	Escribir "EL PORCENTAJE DE HOMBRES ES: ", trunc(porcentaje1), " %";	
+	Escribir "EL PORCENTAJE DE MUJERES ES: ", trunc(porcentaje2), " %";
+FinFuncion
+Funcion ejercicio25
+	//Un profesor prepara tres cuestionarios para una evaluación final: A, B y C. Se sabe que se tarda 5 
+	//minutos en revisar el cuestionario A, 8 en revisar el cuestionario B y 6 en el C. La cantidad de exámenes de cada
+	//tipo se entran por teclado. ¿Cuántas horas y cuántos minutos se tardará en revisar todas las evaluaciones?
+	Definir A, B, C Como Real;
+	Definir first, second, third Como Real;
+	Definir minutos, hora, total como real;
+	Escribir "ingrese los examenes de primero";
+	Leer A;
+	Escribir "ingrese los examenes de primero";
+	Leer B;
+	Escribir "ingrese los examenes de primero";
+	Leer C;	
+	first <- A * 5; ///minutos
+	second <- B * 8;	///minutos
+	third <- C* 6; 	///minutos
+	total <- first + second +  third;
+	hora <- trunc(total / 60); ///TRUNC PARA SACAR LA PARTE ENTERA DE X
+	minutos <- total MOD 60; /// ES EL RESIDUO
+	Escribir "el total de Hora  ", hora;	
+	Escribir "el total de Minuto es ", minutos;	
+FinFuncion
+Funcion ejercicio26
+	//Ejercicio 26: Un alumno desea saber cuál será su calificación final en la materia de Algoritmos. 
+	//Dicha calificación se compone de los siguientes porcentajes: 
+	//55% del promedio de sus tres calificaciones parciales.
+	//30% de la calificación del examen final.
+	//15% de la calificación de un trabajo final.
+	Definir final1, final2, final3 como entero;
+	Definir examf, trabajf Como real;
+	Definir final_promedio, final_total Como Real;
+	Definir examen_final Como Real;
+	Definir trabajo_final Como Real;
+	Definir total Como Real;
+	Escribir "ingrese la nota del primer trabajo parcial";
+	leer final1;
+	Escribir "ingrese la nota del segundo trabajo parcial";
+	leer final2;
+	Escribir "ingrese la nota del tercer trabajo parcial";
+	leer final3;
+	final_promedio <- (final1 + final2 + final3)/3 ;
+	final_total <- final_promedio * 0.55; 
+	Escribir "ingrese la calificacion de su examen parcial";
+	leer examf;
+	examen_final <- examf * 0.30;
+	Escribir "ingrese la calificacion de un trabajo final";
+	leer trabajf;
+	trabajo_final <- trabajf * 0.15;
+	Escribir "el total de todo es";
+	total <- final_total + examen_final + trabajo_final;
+	Escribir "la nota final de los tres trabajos parcial es ",  final_total;
+	Escribir "la nota final del examen parcial es ", examen_final;
+	Escribir "la nota del trabajo final es ", trabajo_final;
+	Escribir "la nota final es ", total;
+FinFuncion
+Algoritmo ejercicios 
+	//ejercicio1()
+	//ejercicio2()
+	//ejercicio3()
+	//ejercicio4()
+	//ejercicio5()
+	//ejercicio6()
+	//ejercicio7()
+	//ejercicio8()
+	//ejercicio9()
+	//ejercicio10()  
+	//ejercicio11()
+	//ejercicio12()
+	//ejercicio13()
+	//ejercicio14()
+	//ejercicio15()
+	//ejercicio16()
+	//ejercicio17()
+	//ejercicio18()
+	//ejercicio19()
+	//ejercicio20()
+	//ejercicio21()
+	//ejercicio22()
+	//ejercicio23()
+	//ejercicio24()
+	//ejercicio25()
+	//ejercicio26()
+
+FinAlgoritmo
